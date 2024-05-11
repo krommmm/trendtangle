@@ -120,4 +120,19 @@
 	body .basket__article{
 		width: 100%;
 	}
+	body .basket__article__text{
+		font-size:14px;
+	}
+	body .basket__article__prix{
+		font-size: 14px;
+	}
+	body .basket__article__text--titre {
+		font-size:14px;
+	}
+	body .basket__article{
+		padding: 0px;
+	}
+	body .basket__article__text {
+		margin-left: 11px;
+	  }
 }

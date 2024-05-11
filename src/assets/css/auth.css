@@ -67,3 +67,8 @@
 .ansPost{
 	margin-top:15px;
 }
+@media screen and (max-width: 800px){
+	body .login__form, body .signup__form {
+		width: 80%;
+	}
+}
