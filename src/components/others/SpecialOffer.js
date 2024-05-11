@@ -95,7 +95,7 @@ function SpecialOffer() {
 				<div className="offer_container">
 					<img
 						className="newProducts_caroussel_img left"
-						src={`http://localhost/api_multi/pictures/articles/${offer.img}`}
+						src={`https://gobliiins.fr/api_multi/pictures/articles/${offer.img}`}
 						alt=""
 					/>
 					<div className="offer_container__text">
@@ -122,7 +122,7 @@ function SpecialOffer() {
 					</div>
 					<img
 						className="newProducts_caroussel_img right"
-						src={`http://localhost/api_multi/pictures/articles/${offer.img}`}
+						src={`https://gobliiins.fr/api_multi/pictures/articles/${offer.img}`}
 						alt=""
 					/>
 				

@@ -59,7 +59,7 @@ function Basket(props) {
 				{panier.map((article, index) => (
 					<div key={index} className="basket__article">
 						<img
-							src={`http://localhost/api_multi/pictures/articles/${article.img}`}
+							src={`https://gobliiins.fr/api_multi/pictures/articles/${article.img}`}
 							alt=""
 						/>
 						<div className="basket__article__text">

@@ -1,6 +1,6 @@
 export async function userSign(name, email, password) {
 	const preRes = await fetch(
-		'http://localhost/api_multi/api/trendtangle/users/signup',
+		'https://gobliiins.fr/api_multi/api/trendtangle/users/signup',
 		{
 			method: 'POST',
 			headers: {},
@@ -17,7 +17,7 @@ export async function userSign(name, email, password) {
 
 export async function userLog(email, password) {
 	const preRes = await fetch(
-		'http://localhost/api_multi/api/trendtangle/users/login',
+		'https://gobliiins.fr/api_multi/api/trendtangle/users/login',
 		{
 			method: 'POST',
 			headers: {},

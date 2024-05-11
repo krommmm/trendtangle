@@ -1,6 +1,6 @@
 export async function getPanier(token) {
 	const preRes = await fetch(
-		'http://localhost/api_multi/api/trendtangle/baskets',
+		'https://gobliiins.fr/api_multi/api/trendtangle/baskets',
 		{
 			method: 'GET',
 			headers: {
@@ -14,7 +14,7 @@ export async function getPanier(token) {
 
 export async function addToPanier(token, uuid) {
 	const preRes = await fetch(
-		`http://localhost/api_multi/api/trendtangle/baskets/add`,
+		`https://gobliiins.fr/api_multi/api/trendtangle/baskets/add`,
 		{
 			method: 'POST',
 			headers: {
@@ -31,7 +31,7 @@ export async function addToPanier(token, uuid) {
 
 export async function modifyBasket(token,articleId,quantity) {
 	const preRes = await fetch(
-		`http://localhost/api_multi/api/trendtangle/baskets/${articleId}/modify`,
+		`https://gobliiins.fr/api_multi/api/trendtangle/baskets/${articleId}/modify`,
 		{
 			method: 'PUT',
 			headers: {

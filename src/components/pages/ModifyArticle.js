@@ -230,7 +230,7 @@ const ModifyArticle = (props) => {
 					<div className="articleUpdate__img">
 						<img
 							ref={imgRef}
-							src={`http://localhost/api_multi/pictures/articles/${myImg}`}
+							src={`https://gobliiins.fr/api_multi/pictures/articles/${myImg}`}
 							alt=""
 						/>
 						<p className="articleUpdate__text-isNew">

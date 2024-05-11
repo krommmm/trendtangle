@@ -81,7 +81,7 @@ function NewProducts() {
 								<div className="newProducts_caroussel_articles">
 									<img
 										className="newProducts_caroussel_img"
-										src={`http://localhost/api_multi/pictures/articles/${article.img}`}
+										src={`https://gobliiins.fr/api_multi/pictures/articles/${article.img}`}
 										alt=""
 									/>
 									<div className="newProducts_carroussel_isNew">
