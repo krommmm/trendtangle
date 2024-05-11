@@ -1,6 +1,6 @@
 export async function postArticle(token, formData) {
 	const preRes = await fetch(
-		'https://gobliiins.fr/api_multi/api/trendtangle/articles',
+		'https://gobliiins.fr/api/trendtangle/articles',
 		{
 			method: 'POST',
 			headers: {
@@ -16,7 +16,7 @@ export async function postArticle(token, formData) {
 
 export async function deleteArticle(token, uuid) {
 	const preRes = await fetch(
-		`https://gobliiins.fr/api_multi/api/trendtangle/articles/${uuid}`,
+		`https://gobliiins.fr/api/trendtangle/articles/${uuid}`,
 		{
 			method: 'DELETE',
 			headers: {

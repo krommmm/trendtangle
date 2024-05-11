@@ -1,6 +1,6 @@
 export async function isAdmin(token) {
 	const preRes = await fetch(
-		'https://gobliiins.fr/api_multi/api/trendtangle/admin',
+		'https://gobliiins.fr/api/trendtangle/admin',
 		{
 			method: 'GET',
 			headers: {

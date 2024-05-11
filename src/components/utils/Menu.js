@@ -197,7 +197,7 @@ function Menu(props) {
 														>
 															<div className="panier__miniature_article__img">
 																<img
-																	src={`https://gobliiins.fr/api_multi/pictures/articles/${article.img}`}
+																	src={`https://gobliiins.fr/pictures/articles/${article.img}`}
 																	alt=""
 																/>
 																<i
