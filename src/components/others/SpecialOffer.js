@@ -95,7 +95,7 @@ function SpecialOffer() {
 				<div className="offer_container">
 					<img
 						className="newProducts_caroussel_img left"
-						src={`https://gobliiins.fr/api_multi/pictures/articles/${offer.img}`}
+						src={`https://gobliiins.fr/pictures/articles/${offer.img}`}
 						alt=""
 					/>
 					<div className="offer_container__text">
