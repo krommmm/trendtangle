@@ -8,7 +8,7 @@ function Basket(props) {
 	const [total, setTotal] = useState();
 	const [totalPrice, setTotalPrice] = useState(props.totalPrice);
 	const [toggle, setToggle] = useState(false);
-	const [selectedIndex, setSelectedIndex] = useState(4);
+	const [selectedIndex, setSelectedIndex] = useState(0);
 
 	const { toggleFlip } = useFlip();
 	const msgRef = useRef(null);
