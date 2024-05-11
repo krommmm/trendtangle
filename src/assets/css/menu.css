@@ -210,3 +210,21 @@
     }
 }
 
+@media screen and (max-width: 1320px){
+	body .menu_top{
+		width: 100%;
+	}
+	body .menu_middle{
+		width: 100%;
+		flex-direction:column;
+	}
+	body .menu_middle-save {
+		margin-top: 37px;
+	  }
+	  body .menu_middle .menu_middle-logo{
+		margin-bottom: 10px;
+	  }
+	  body .menu_bottom .menu_bottom_container{
+		width: 100%;
+	  }
+}

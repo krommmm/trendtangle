@@ -56,3 +56,9 @@
 	height: 300px;
 	object-fit:fill;
 }
+
+@media screen and (max-width: 1320px){
+body .showCase{
+	flex-wrap:wrap;
+}
+}

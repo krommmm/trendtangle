@@ -106,7 +106,7 @@ function Basket(props) {
 					</div>
 				))}
 				<div className="basket__prixTotal">
-				<label><span className="bold">Prix total: </span></label>{totalPrice}€
+				<label><span className="bold">Prix total: </span></label>{props.totalprice}€
 				</div>
 				<button className="btn basket__valider" onClick={handleCmd}>
 					Valider la commande
