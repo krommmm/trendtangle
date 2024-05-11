@@ -50,7 +50,7 @@ export async function modifyBasket(token,articleId,quantity) {
 
 export async function deleteArticleFromPanier(token, uuid) {
 	const preRes = await fetch(
-		`http://localhost/api/trendtangle/baskets/${uuid}/delete`,
+		`https://gobliiins.fr/api/trendtangle/baskets/${uuid}/delete`,
 		{
 			method: 'DELETE',
 			headers: {
