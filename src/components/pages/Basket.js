@@ -8,7 +8,7 @@ function Basket(props) {
 	const [total, setTotal] = useState();
 	const [totalPrice, setTotalPrice] = useState(props.totalPrice);
 	const [toggle, setToggle] = useState(false);
-	const [selectedIndex, setSelectedIndex] = useState(0);
+
 
 	const { toggleFlip } = useFlip();
 	const msgRef = useRef(null);
@@ -33,13 +33,6 @@ function Basket(props) {
 	// 		.catch((err) => console.error(err));
 	// }, [flip]);
 
-	useEffect(() => {
-		// Mettre le focus sur l'option sélectionnée après le rendu initial
-		const selectElement = document.getElementById('mySelect');
-		if (selectElement) {
-			selectElement.selectedIndex = selectedIndex;
-		}
-	}, [selectedIndex, flip]);
 
 	async function handleChange(e, index) {
 		const newPanier = [...panier];
