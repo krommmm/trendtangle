@@ -1,0 +1,146 @@
+.admin {
+	min-height: 51vh;
+}
+.home {
+	min-height: 51vh;
+}
+.articles {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 20px;
+}
+.article {
+	position: relative;
+	width: 15vw;
+	margin: 10px;
+	padding: 10px;
+	background-color: white;
+}
+.article__img {
+	width: 100%;
+	height: 150px;
+	object-fit: contain;
+}
+.article__text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+.article__text-category {
+	color: rgba(0, 0, 0, 0.4);
+	padding: 5px;
+	font-size: 13px;
+	line-height: 4px;
+}
+.article__text-name {
+	color: rgba(0, 0, 0, 0.9);
+	font-weight: 600;
+	font-size: 19px;
+}
+.article__text-price {
+	color: #d10024;
+	font-weight: 600;
+}
+.article__text-stars {
+	color: #d10024;
+	font-weight: 600;
+}
+.article__isNew {
+	position: absolute;
+	top: 5%;
+	right: 2%;
+	z-index: 999;
+}
+.article__isNew p {
+	color: white;
+	background-color: #d10024;
+	padding: 5px;
+	width: 50px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.article__isDiscount {
+	position: absolute;
+	top: 5%;
+	right: 70px;
+	z-index: 999;
+}
+
+.article__isDiscount p {
+	color: #d10024;
+	background-color: white;
+	border: 2px solid #d10024;
+	padding: 5px;
+	width: 50px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.article__btn {
+	display: flex;
+	margin: auto;
+	height: auto;
+	margin: 10px auto;
+}
+
+.article__text-options {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.article__text-options i {
+	padding: 10px;
+	cursor: pointer;
+}
+.article__text-options i:hover {
+	color: #d10024;
+}
+
+.create {
+	display: flex;
+	width: 80%;
+	margin: auto;
+	margin: 30px auto;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+
+.admin {
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: 15px;
+}
+
+.areYouSure {
+	background-color: white;
+	padding: 15px;
+	position: absolute;
+	z-index: 999;
+	border-radius: 5px;
+	-webkit-box-shadow: 5px 5px 15px 5px #000000;
+	box-shadow: 5px 5px 15px 5px #000000;
+	transform: translateY(-500px);
+	animation-name: descendDuCiel;
+	animation-duration: 0.8s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
+@keyframes descendDuCiel {
+	0% {
+		transform: translateY(-500px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+.areYouSure p {
+	margin-bottom: 15px;
+}

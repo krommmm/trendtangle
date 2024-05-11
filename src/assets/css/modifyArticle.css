@@ -1,0 +1,78 @@
+.articleUpdate {
+    display:flex;
+	padding: 10px;
+    background-color: rgba(0,0,0,.1);
+    padding: 15px;
+}
+.articleUpdate__container{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items: center;
+	padding: 15px;
+	min-height: 55vh;
+}
+.articleUpdate__img{
+    position: relative;
+}
+.articleUpdate{
+	margin-top: 25px;
+}
+
+.articleUpdate__img img {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+}
+.articleUpdate__text{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction:column;
+    margin-left: 15px;
+}
+.articleUpdate__text__multiplesChoices {
+	display: flex;
+}
+.articleUpdate__text__multiplesChoices p {
+	margin: 0px 5px;
+    font-size:13px;
+    color: rgba(0,0,0,.4);
+}
+
+.articleUpdate__text-discount {
+	color: #d10024;
+	background-color: white;
+	border: 2px solid #d10024;
+	padding: 5px;
+	width: 50px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 5%;
+	right: 70px;
+	z-index: 999;
+}
+.articleUpdate__text-isNew {
+	color: white;
+	background-color: #d10024;
+	padding: 5px;
+	width: 50px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 5%;
+	right: 2%;
+	z-index: 999;
+}
+.articleUpdate__text-special_offer{
+font-size: 12px;
+}
+
+#myImgModify{
+	display:none;
+}

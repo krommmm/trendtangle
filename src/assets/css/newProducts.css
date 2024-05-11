@@ -1,0 +1,122 @@
+.newProducts{
+    background-color: rgba(0,0,0,.1);
+    padding: 15px;
+	min-height: 51vh;
+}
+
+
+.newProducts_carroussel_container {
+	width: 1123px;
+	margin: auto;
+	overflow: hidden;
+}
+.newProducts_caroussel {
+	width: 1123px;
+	margin: auto;
+	display: flex;
+	transition: 0.3s ease-in-out;
+}
+
+.newProducts_caroussel_img {
+	width: 100%;
+	height: 200px;
+}
+.newProducts_caroussel_articles {
+	width: 250px;
+	height: 400px;
+	padding: 15px;
+	border: 1px solid black;
+	margin: 15px;
+	position: relative;
+}
+
+.newProducts_carroussel_text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 10px;
+}
+.newProducts_carroussel_text button {
+	margin-top: 15px;
+	cursor: pointer;
+}
+.arrowsForCarroussel {
+	display: flex;
+}
+.arrowsForCarroussel i {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid black;
+	background-color: white;
+	color: black;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	margin: 5px;
+	cursor: pointer;
+}
+.arrowsForCarroussel i:hover {
+	border: 1px solid #d10024;
+	background-color: #d10024;
+	color: white;
+}
+
+.newProducts_carroussel_text-category {
+	color: rgba(0, 0, 0, 0.4);
+	padding: 5px;
+}
+.newProducts_carroussel_text-name {
+	color: rgba(0, 0, 0, 0.9);
+	font-weight: 600;
+	font-size: 19px;
+}
+.newProducts_carroussel_text-price {
+	color: #d10024;
+	font-weight: 600;
+}
+.newProducts_carroussel_text-stars {
+	color: #d10024;
+	font-weight: 600;
+}
+.newProducts_carroussel_isNew {
+	position: absolute;
+	top: 5%;
+	right: 2%;
+	z-index: 999;
+}
+.newProducts_carroussel_isNew p {
+	color: white;
+	background-color: #d10024;
+	padding: 5px;
+	width: 50px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.newProducts_carroussel_isDiscount {
+	position: absolute;
+	top: 5%;
+	right: 70px;
+	z-index: 999;
+}
+
+.newProducts_carroussel_isDiscount p {
+	color: #d10024;
+	background-color: white;
+	border: 2px solid #d10024;
+	padding: 5px;
+	width: 50px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.arrowsForCarroussel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
