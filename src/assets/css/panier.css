@@ -5,7 +5,7 @@
 	background-color: white;
 	color: black;
 	position: absolute;
-	z-index: 999;
+	z-index: 9991;
 	top: 50px;
 	border: 1px solid black;
 	width: 300px;
@@ -108,4 +108,16 @@
 }
 .basket__valider{
 	margin: 15px 0px;
+}
+
+@media screen and (max-width: 1350px){
+	body .basket__article{
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 766px){
+	body .basket__article{
+		width: 100%;
+	}
 }

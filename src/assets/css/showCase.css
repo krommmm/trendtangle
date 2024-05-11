@@ -1,13 +1,13 @@
 .showCase {
 	display: flex;
-    justify-content:center;
+	justify-content: center;
 }
 .showCase article {
 	position: relative;
 	width: 350px;
-    height: 258px;
+	height: 258px;
 	overflow: hidden;
-    margin: 15px;
+	margin: 15px;
 }
 .showCase article .showCase_text {
 	position: absolute;
@@ -22,7 +22,7 @@
 .showCase article .showCase_text .showCase_text_shop {
 	font-size: 15px;
 	display: flex;
-    font-weight: 600;
+	font-weight: 600;
 }
 .showCase article::before {
 	content: '';
@@ -54,11 +54,17 @@
 .showCase_img img {
 	width: 100%;
 	height: 300px;
-	object-fit:fill;
+	object-fit: fill;
 }
 
-@media screen and (max-width: 1320px){
-body .showCase{
-	flex-wrap:wrap;
+@media screen and (max-width: 1320px) {
+	body .showCase {
+		flex-wrap: wrap;
+	}
 }
+
+@media screen and (max-width: 1319px) {
+	body .showCase article {
+		width: 286px;
+	}
 }

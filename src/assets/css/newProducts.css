@@ -120,3 +120,14 @@
 	justify-content: center;
 	align-items: center;
 }
+@media screen and (max-width: 1400px){
+	body .newProducts_carroussel_container{
+		width: 562px;
+	}
+}
+
+@media screen and (max-width: 580px) {
+	body .newProducts_carroussel_container{
+		width: 281px;
+	}
+}

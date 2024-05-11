@@ -31,3 +31,18 @@
 .footer__category-lorem{
     max-width: 250px;
 }
+@media screen and (max-width: 1200px){
+	body .footer_container{
+		width: 100%;
+	}
+	body .footer__category{
+		margin: 10px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	body .footer_container {
+	  width: 100%;
+	  flex-direction: column;
+	}
+  }

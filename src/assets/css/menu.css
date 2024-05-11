@@ -152,15 +152,15 @@
 }
 .listMenu li {
 	padding: 5px;
-	margin-right:0px;
+	margin-right: 0px;
 	width: 100%;
 }
-.menu_deconnection{
-	position:absolute;
-	top:5px;
+.menu_deconnection {
+	position: absolute;
+	top: 5px;
 	right: 10px;
 }
-.panier_container_total_icon{
+.panier_container_total_icon {
 	position: absolute;
 	top: -15px;
 	background-color: #d10024;
@@ -178,53 +178,86 @@
 	padding: 10px;
 }
 .move {
-    animation-name: move;
-    animation-timing-function: ease-in-out;
-    animation-duration: 1s;
+	animation-name: move;
+	animation-timing-function: ease-in-out;
+	animation-duration: 1s;
 }
 
 @keyframes move {
-    0% {
-        transform: scale(1) translateY(0px);
-        color: rgb(255, 94, 0);
-    }
+	0% {
+		transform: scale(1) translateY(0px);
+		color: rgb(255, 94, 0);
+	}
 
-    20% {
-        transform: scale(0.6) translateY(0px);
-    }
+	20% {
+		transform: scale(0.6) translateY(0px);
+	}
 
-    40% {
-        transform: scale(1.5) translateY(-10px);
-    }
+	40% {
+		transform: scale(1.5) translateY(-10px);
+	}
 
-    60% {
-        transform: scale(1) translateY(0px);
-    }
+	60% {
+		transform: scale(1) translateY(0px);
+	}
 
-    70% {
-        transform: scale(1.2) translateY(-5px);
-    }
+	70% {
+		transform: scale(1.2) translateY(-5px);
+	}
 
-    100% {
-        transform: scale(1) translateY(0px);
-    }
+	100% {
+		transform: scale(1) translateY(0px);
+	}
 }
 
-@media screen and (max-width: 1320px){
-	body .menu_top{
+@media screen and (max-width: 1320px) {
+	body .menu_top {
 		width: 100%;
 	}
-	body .menu_middle{
+	body .menu_middle {
 		width: 100%;
-		flex-direction:column;
+		flex-direction: column;
 	}
 	body .menu_middle-save {
 		margin-top: 37px;
-	  }
-	  body .menu_middle .menu_middle-logo{
+	}
+	body .menu_middle .menu_middle-logo {
 		margin-bottom: 10px;
-	  }
-	  body .menu_bottom .menu_bottom_container{
+	}
+	body .menu_bottom .menu_bottom_container {
 		width: 100%;
-	  }
+	}
+}
+
+@media screen and (max-width: 1319px) {
+	body .menu_top {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	body .menu_top_left ul li {
+		margin-right: 10px;
+		justify-content: flex-start;
+		margin: 5px 0px;
+	}
+	body .menu_top_left ul {
+		display: flex;
+		flex-direction: column;
+	}
+	body .menu_top_right ul {
+		margin-top: 20px;
+	}
+	body .menu_top_right ul li {
+		display: flex;
+	}
+	body .menu_middle .menu_middle-searchBar input {
+		width: 150px;
+	}
+	body .menu_bottom li {
+		margin: 15px;
+	}
+
+	body .menu_bottom ul {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
