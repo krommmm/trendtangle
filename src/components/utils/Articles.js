@@ -101,18 +101,17 @@ function Articles(props) {
 
 	useEffect(() => {
 		function handleScroll() {
-			var scrollHeight =
-				document.documentElement.scrollTop || document.body.scrollTop;
-			console.log('Hauteur du scroll : ' + scrollHeight);
-			msgRef.current.parentElement.style.top = `${scrollHeight + 300}px`;
+		  var scrollHeight = document.documentElement.scrollTop || document.body.scrollTop;
+		  console.log("Hauteur du scroll : " + scrollHeight);
+		  msgRef.current.parentElement.style.top=`${scrollHeight+300}px`;
 		}
-
+	
 		window.addEventListener('scroll', handleScroll);
-
+	
 		return () => {
-			window.removeEventListener('scroll', handleScroll);
+		  window.removeEventListener('scroll', handleScroll);
 		};
-	}, []);
+	  }, []);
 
 	return (
 		<>
@@ -192,33 +191,33 @@ function Articles(props) {
 							>
 								ADD TO CART
 							</button>
-
-							<div className="article__text-options">
-								<i
-									data-id={article.uuid}
-									onClick={handleLike}
-									className="fa-solid fa-thumbs-up"
-								></i>
-								{article.likes}
-								{props.isAdmin && (
-									<div>
-										<NavLink
-											to={`/modify?uuid=${article.uuid}`}
-										>
-											<i
-												data-id={article.uuid}
-												className="fa-solid fa-gear"
-											></i>
-										</NavLink>
+				
+								<div className="article__text-options">
+									<i
+										data-id={article.uuid}
+										onClick={handleLike}
+										className="fa-solid fa-thumbs-up"
+									></i>
+									{article.likes}
+									{props.isAdmin && (<div>
+									<NavLink
+										to={`/modify?uuid=${article.uuid}`}
+									>
 										<i
 											data-id={article.uuid}
-											onClick={handleDelete}
-											ref={deleteRef}
-											className="fa-solid fa-trash-can"
+											className="fa-solid fa-gear"
 										></i>
-									</div>
-								)}
-							</div>
+									</NavLink>
+									<i
+										data-id={article.uuid}
+										onClick={handleDelete}
+										ref={deleteRef}
+										className="fa-solid fa-trash-can"
+									></i>
+									</div> )}
+									
+								</div>
+							
 						</div>
 					</div>
 				))}

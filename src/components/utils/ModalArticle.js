@@ -45,7 +45,6 @@ function ModalArticle(props) {
 		e.preventDefault();
 
 		let conversionIsNew = isNew === true ? 1 : 0;
-
 		const formData = new FormData();
 		formData.append('name', nameRef.current.value);
 		formData.append('price', priceRef.current.value);

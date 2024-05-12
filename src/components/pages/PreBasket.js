@@ -18,10 +18,8 @@ const Prebasket = () => {
 		const token = JSON.parse(localStorage.getItem('token'));
 		getPanier(token)
 			.then((res) => {
-				
 				setPanier(res.articles);
 				setTotal(res.totalPrice);
-				//console.log(res);
 				if (res.totalPrice === 0) {
 					setIsPanierEmpty(false);
 				}else{
@@ -31,7 +29,7 @@ const Prebasket = () => {
 				for(let i=0;i<res.articles.length;i++){
 					cumul += (parseFloat(res.articles[i].price)*(1-(parseFloat(res.articles[i].discount))/100)*parseFloat(res.articles[i].quantity));
 				}
-				setTotalPrice(cumul);
+				setTotalPrice(cumul.toFixed(2));
 			})
 			.catch((err) => console.error(err));
 	}, [flip]);

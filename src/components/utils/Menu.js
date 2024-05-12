@@ -51,8 +51,12 @@ function Menu(props) {
 		getPanier(token)
 			.then((res) => {
 				setPanier(res.articles);
-				setTotal(res.totalPrice);
-				console.log(res);
+				let cumul = 0;
+				for(let i=0;i<res.articles.length;i++){
+					cumul += (parseFloat(res.articles[i].price)*(1-(parseFloat(res.articles[i].discount))/100)*parseFloat(res.articles[i].quantity));
+				}
+				setTotal(cumul.toFixed(2));
+
 			})
 			.catch((err) => console.error(err));
 			panierIconRef.current.classList.add("move");
@@ -223,7 +227,7 @@ function Menu(props) {
 																	x{' '}
 																	<span className="bold">
 																		{
-																			article.priceDiscount
+																			article.priceDiscount.toFixed(2)
 																		}
 																		€
 																	</span>
