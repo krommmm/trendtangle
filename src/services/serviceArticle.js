@@ -30,7 +30,7 @@ export async function deleteArticle(token, uuid) {
 
 export async function likeArticle(token, uuid) {
 	const preRes = await fetch(
-		`https://gobliiins.fr/api_multi/api/trendtangle/articles/${uuid}/likes`,
+		`https://gobliiins.fr/api/trendtangle/articles/${uuid}/likes`,
 		{
 			method: 'POST',
 			headers: {
@@ -47,7 +47,7 @@ export async function likeArticle(token, uuid) {
 
 export async function updateArticle(token,uuid,formData){
 	const preRes = await fetch(
-		`https://gobliiins.fr/api_multi/api/trendtangle/articles/${uuid}`,
+		`https://gobliiins.fr/api/trendtangle/articles/${uuid}`,
 		{
 			method: 'POST',
 			headers: {
