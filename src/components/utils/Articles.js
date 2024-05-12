@@ -6,12 +6,12 @@ import { addToPanier } from '../../services/servicePanier';
 import { useFlip } from '../../FlipContext';
 
 function Articles(props) {
-
 	const { toggleFlip } = useFlip();
-	const [answerModal, setAnswerModal] = useState("");
-	const [triggersAfterAnswerModal, setTriggersAfterAnswerModal] = useState(false);
+	const [answerModal, setAnswerModal] = useState('');
+	const [triggersAfterAnswerModal, setTriggersAfterAnswerModal] =
+		useState(false);
 
-    // Utilisez toggleFlip pour mettre à jour le flip 
+	// Utilisez toggleFlip pour mettre à jour le flip
 	const msgRef = useRef(null);
 
 	const [maj, setMaj] = useState(false);
@@ -24,18 +24,18 @@ function Articles(props) {
 	const handleCreate = () => {
 		setMaj(!maj);
 	};
-	async function displayAnswerModal(){
-		msgRef.current.textContent=answerModal;
+	async function displayAnswerModal() {
+		msgRef.current.textContent = answerModal;
 		msgRef.current.parentElement.classList.add('hidden');
 		await new Promise((resolve) => setTimeout(resolve, 10));
 		msgRef.current.parentElement.classList.remove('hidden');
 	}
 
-	useEffect(()=>{
-		if(answerModal!==""){
-		displayAnswerModal();
+	useEffect(() => {
+		if (answerModal !== '') {
+			displayAnswerModal();
 		}
-	},[triggersAfterAnswerModal]);
+	}, [triggersAfterAnswerModal]);
 
 	useEffect(() => {
 		props.refresh(toggle);
@@ -56,7 +56,7 @@ function Articles(props) {
 		setToggle(!toggle);
 		// setToggle(prevToggle => !prevToggle);
 	}
-   
+
 	function handleConfirmNo(e) {
 		confirmRef.current.classList.toggle('hidden');
 	}
@@ -66,7 +66,7 @@ function Articles(props) {
 		await new Promise((resolve) => setTimeout(resolve, 10));
 		const res = await deleteArticle(token, uuid);
 		console.log(res);
-		msgRef.current.textContent=`${res.msg}`;
+		msgRef.current.textContent = `${res.msg}`;
 		msgRef.current.parentElement.classList.add('hidden');
 		await new Promise((resolve) => setTimeout(resolve, 10));
 		msgRef.current.parentElement.classList.remove('hidden');
@@ -78,17 +78,19 @@ function Articles(props) {
 	async function addToCart(e) {
 		const token = JSON.parse(localStorage.getItem('token'));
 		if (!token) {
-			console.log({msg:"Aucun token disponible. L'utilisateur doit être connecté."});
-			msgRef.current.textContent=`Aucun token disponible. L'utilisateur doit être connecté.`;
-			msgRef.current.parentElement.classList.add("hidden");
+			console.log({
+				msg: "Aucun token disponible. L'utilisateur doit être connecté.",
+			});
+			msgRef.current.textContent = `Aucun token disponible. L'utilisateur doit être connecté.`;
+			msgRef.current.parentElement.classList.add('hidden');
 			await new Promise((resolve) => setTimeout(resolve, 10));
-			msgRef.current.parentElement.classList.remove("hidden");
+			msgRef.current.parentElement.classList.remove('hidden');
 			// Affichez un message à l'utilisateur ou effectuez d'autres actions appropriées pour gérer le cas où l'utilisateur n'est pas connecté.
 			return;
 		}
 		await new Promise((resolve) => setTimeout(resolve, 10));
 		let uuid = e.target.dataset.id;
-		const res = await addToPanier(token, uuid); 
+		const res = await addToPanier(token, uuid);
 		console.log(res);
 		msgRef.current.textContent = `${res.msg}`;
 		msgRef.current.parentElement.classList.add('hidden');
@@ -96,6 +98,20 @@ function Articles(props) {
 		msgRef.current.parentElement.classList.remove('hidden');
 		toggleFlip();
 	}
+
+	useEffect(() => {
+		function handleScroll() {
+		  var scrollHeight = document.documentElement.scrollTop || document.body.scrollTop;
+		  console.log("Hauteur du scroll : " + scrollHeight);
+		  msgRef.current.parentElement.style.top=`${scrollHeight+300}px`;
+		}
+	
+		window.addEventListener('scroll', handleScroll);
+	
+		return () => {
+		  window.removeEventListener('scroll', handleScroll);
+		};
+	  }, []);
 
 	return (
 		<>
@@ -118,7 +134,6 @@ function Articles(props) {
 			)}
 
 			<div className="articles">
-				
 				{props.data.map((article, index) => (
 					<div
 						className="article"
@@ -226,4 +241,3 @@ function Articles(props) {
 	);
 }
 export default Articles;
- 
