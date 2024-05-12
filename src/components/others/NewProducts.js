@@ -45,7 +45,6 @@ function NewProducts() {
 	}, [carrouIndex]);
 
 	async function addToCart(e) {
-	
 		const token = JSON.parse(localStorage.getItem('token'));
 		if (!token) {
 			console.log({
@@ -69,6 +68,20 @@ function NewProducts() {
 		toggleFlip();
 	}
 
+	useEffect(() => {
+		function handleScroll() {
+		  var scrollHeight = document.documentElement.scrollTop || document.body.scrollTop;
+		  console.log("Hauteur du scroll : " + scrollHeight);
+		  msgRef.current.parentElement.style.top=`${scrollHeight+300}px`;
+		}
+	
+		window.addEventListener('scroll', handleScroll);
+	
+		return () => {
+		  window.removeEventListener('scroll', handleScroll);
+		};
+	  }, []);
+
 	return (
 		<>
 			<div className="newProducts2">
@@ -88,7 +101,7 @@ function NewProducts() {
 										{article.isNew === 1 ? (
 											<p>New</p>
 										) : null}
-									</div> 
+									</div>
 									<div className="newProducts_carroussel_isDiscount">
 										{article.discount !== 0 ? (
 											<p>-{article.discount}%</p>
@@ -143,9 +156,6 @@ function NewProducts() {
 								</div>
 							</div>
 						))}
-						<div className="msg_box hidden">
-							<p ref={msgRef}></p>
-						</div>
 					</div>
 				</div>
 				<div className="arrowsForCarroussel">
@@ -158,6 +168,9 @@ function NewProducts() {
 						className="fa-solid fa-angle-right"
 					></i>
 				</div>
+			</div>
+			<div className="msg_box hidden">
+				<p ref={msgRef}></p>
 			</div>
 		</>
 	);
