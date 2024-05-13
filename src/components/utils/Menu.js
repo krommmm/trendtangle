@@ -111,6 +111,10 @@ function Menu(props) {
 		window.location.reload();
 	}
 
+	function handleCloseCart() {
+        setOpen(false);
+    }
+
 	return (
 		<>
 			<section className="menu">
@@ -246,13 +250,14 @@ function Menu(props) {
 													Total: {total}€
 												</p>
 											</div>
-											<div className="panier__miniature__options">
+											<div className="panier__miniature__options" onClick={handleCloseCart}>
 										
 												<NavLink
+												
 													to="/PreBasket"
 													className="basket_Zone"
 												>
-													<button className="btn black">
+													<button className="btn black" >
 														View Cart
 													</button>
 												</NavLink>
