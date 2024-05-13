@@ -10,6 +10,7 @@ function Basket(props) {
 	const [totalPrice, setTotalPrice] = useState(props.totalPrice);
 	const [toggle, setToggle] = useState(false);
 	const [currentId, setCurrentId] = useState('');
+	const [myState, setMyState] = useState(props.etat);
 
 	const confirmRef = useRef(null);
 	const { toggleFlip } = useFlip();
@@ -22,7 +23,7 @@ function Basket(props) {
 		// changer aussi la quantité et merci d'afficher le discount pour la page
 		const token = JSON.parse(localStorage.getItem('token'));
 		let quantity = e.target.value;
-		let articleId = e.target.dataset.id; 
+		let articleId = e.target.dataset.id;
 		let res = await modifyBasket(token, articleId, quantity);
 		console.log(res);
 		toggleFlip();
@@ -33,6 +34,8 @@ function Basket(props) {
 	}
 
 	function handleCmd(e) {}
+
+
 	async function handleDelete(e) {
 		// are you sure ?
 		setCurrentId(e.target.dataset.id);
@@ -53,15 +56,16 @@ function Basket(props) {
 		await new Promise((resolve) => setTimeout(resolve, 10));
 		msgRef.current.parentElement.classList.remove('hidden');
 		setToggle(!toggle);
-		// setToggle(prevToggle => !prevToggle);
-		confirmRef.current.classList.toggle('hidden');
+		props.remonterEtat(!myState);
 		toggleFlip();
+		confirmRef.current.classList.toggle('hidden');
 	}
 
 	return (
 		<>
 			<div className="basket">
-				{panier.map((article, index) => (
+				{props.etat? (<p>true</p>):(<p>false</p>)}
+				{props.panier.map((article, index) => (
 					<div key={index} className="basket__article">
 						<img
 							src={`https://gobliiins.fr/pictures/articles/${article.img}`}
@@ -135,20 +139,22 @@ function Basket(props) {
 							</button>
 						</div>
 					</div>
-					
 				))}
-						<div className="areYouSure hidden" ref={confirmRef}>
-				<p>Are you sure ?</p>
-				<button className="btnLittle btn-no" onClick={handleConfirmNo}>
-					No
-				</button>{' '}
-				<button
-					className="btnLittle btn-yes"
-					onClick={handleConfirmYes}
-				>
-					Yes
-				</button>
-			</div>
+				<div className="areYouSure hidden" ref={confirmRef}>
+					<p>Are you sure ?</p>
+					<button
+						className="btnLittle btn-no"
+						onClick={handleConfirmNo}
+					>
+						No
+					</button>{' '}
+					<button
+						className="btnLittle btn-yes"
+						onClick={handleConfirmYes}
+					>
+						Yes
+					</button>
+				</div>
 				<div className="basket__prixTotal">
 					<label>
 						<span className="bold">Prix total: </span>

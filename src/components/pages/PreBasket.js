@@ -10,7 +10,7 @@ const Prebasket = () => {
 	const [panier, setPanier] = useState([]);
 	const [total, setTotal] = useState();
 	const [totalPrice, setTotalPrice] = useState(0);
-	const [toggle, setToggle] = useState(false);
+	const [triggers, setTriggers] = useState(false);
     const [isPanierEmpty, setIsPanierEmpty] = useState();
 
 
@@ -31,12 +31,12 @@ const Prebasket = () => {
 				}
 				setTotalPrice(cumul.toFixed(2));
 			})
-			.catch((err) => console.error(err));
-	}, [flip]);
+			.catch((err) => console.error(err)); 
+	}, [flip,triggers]);
 
     return (
         <>
-            {isPanierEmpty && <Basket panier={panier} totalprice={totalPrice}/>}
+            {isPanierEmpty && <Basket panier={panier} totalprice={totalPrice} remonterEtat={setTriggers} etat={triggers}/>}
             {!isPanierEmpty &&  <Home />}
         </>
     );

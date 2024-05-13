@@ -25,7 +25,7 @@ function Menu(props) {
 	const panierRef = useRef(null);
 	const panierIconRef = useRef(null);
 	const [isConnected, setIsConnected] = useState(false);
-	const [triggers, setTriggers] = useState(false);
+	const [triggers, setTriggers] = useState(false); 
 	const [triggersAdmin, setTriggersAdmin] = useState(props.stateAdmin);
 	const { toggleFlip } = useFlip();
 
