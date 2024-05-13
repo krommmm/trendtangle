@@ -24,7 +24,7 @@
 .newProducts_caroussel_articles {
 	width: 250px;
 	height: 400px;
-	padding: 15px;
+	padding: 0px;
 	border: 1px solid black;
 	margin: 15px;
 	position: relative;

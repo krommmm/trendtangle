@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { userSign, userLog } from '../../services/user';
+import { useFlip } from '../../FlipContext';
 
 function Signup(props) {
 	const [ansPost, setAnsPost] = useState('');
@@ -10,7 +11,8 @@ function Signup(props) {
 	const [isName, setIsName] = useState(false);
 	const [isEmail, setIsEmail] = useState(false);
 	const msgRef = useRef(null);
-
+	const { toggleFlip } = useFlip();
+	
 	const [isPassword, setIsPassword] = useState(false);
 
 	const ulRef = useRef(null);
@@ -69,7 +71,7 @@ function Signup(props) {
 		const isPasswordValid =
 			meetsCharRequirements && hasSpecialChar && hasNoSpace;
 		setIsPassword(isPasswordValid);
-		if (isPasswordValid) {
+		if (isPasswordValid) { 
 			setPassword(value);
 		} else {
 			setPassword('');
@@ -98,9 +100,9 @@ function Signup(props) {
 			}
 		} else {
 			setIsReady(false);
-			
 			setAnsPost('Veuillez remplir tous les champs');
 		}
+		toggleFlip();
 	}
 
 	return (
@@ -162,6 +164,9 @@ function Signup(props) {
 						Log in
 					</span>
 				</p>
+			</div>
+			<div className="msg_box hidden">
+				<p ref={msgRef}></p>
 			</div>
 		
 		</>

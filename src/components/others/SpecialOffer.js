@@ -88,6 +88,21 @@ function SpecialOffer() {
 		toggleFlip();
 	}
 
+	useEffect(() => {
+		function handleScroll() {
+			var scrollHeight =
+				document.documentElement.scrollTop || document.body.scrollTop;
+			console.log('Hauteur du scroll : ' + scrollHeight);
+			msgRef.current.parentElement.style.top = `${scrollHeight + 300}px`;
+		}
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
 	return (
 		<>
 			<div className="specialOffer">

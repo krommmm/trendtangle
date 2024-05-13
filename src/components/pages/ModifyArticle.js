@@ -16,6 +16,7 @@ const ModifyArticle = (props) => {
 	const [discount, setDiscount] = useState('');
 	const [name, setName] = useState('');
 	const [price, setPrice] = useState('');
+	const [priceDiscount, setPriceDiscount] = useState("");
 	const [stock, setStock] = useState('');
 	const [stars, setStars] = useState('');
 	const [specialOffer, setSpecialOffer] = useState('');
@@ -36,6 +37,7 @@ const ModifyArticle = (props) => {
 			setSelectCategory(theArticle.category);
 			setName(theArticle.name);
 			setPrice(theArticle.price);
+			setPriceDiscount((theArticle.price*(1-theArticle.discount/100)).toFixed(2));
 			setStock(theArticle.stock);
 			setIsNew(theArticle.isNew === 0 ? false : true);
 			setStars(theArticle.stars);
@@ -253,8 +255,9 @@ const ModifyArticle = (props) => {
 							</p>
 						</div>
 						<p className="articleUpdate__text-name">{name}</p>
-
-						<p className="articleUpdate__text-price">{price} €</p>
+						{priceDiscount>0 ? (<p className="articleUpdate__text-price">{priceDiscount} <span className="rayé">{price}</span> €</p> ):( <p className="articleUpdate__text-price">{price} €</p> )}
+		
+					
 						<p className="articleUpdate__text-stock">
 							{' '}
 							{stock} unités disponibles

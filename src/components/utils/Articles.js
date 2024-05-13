@@ -102,8 +102,8 @@ function Articles(props) {
 	useEffect(() => {
 		function handleScroll() {
 		  var scrollHeight = document.documentElement.scrollTop || document.body.scrollTop;
-		  console.log("Hauteur du scroll : " + scrollHeight);
 		  msgRef.current.parentElement.style.top=`${scrollHeight+300}px`;
+		  confirmRef.current.style.top=`${scrollHeight+600}px`;
 		}
 	
 		window.addEventListener('scroll', handleScroll);
@@ -221,7 +221,12 @@ function Articles(props) {
 						</div>
 					</div>
 				))}
-				<div className="areYouSure hidden" ref={confirmRef}>
+			
+			</div>
+			<div className="msg_box hidden">
+				<p ref={msgRef}></p>
+			</div>
+			<div className="areYouSure hidden" ref={confirmRef}>
 					<p>Are you sure ?</p>
 					<button
 						className="btnLittle btn-no"
@@ -236,10 +241,6 @@ function Articles(props) {
 						Yes
 					</button>
 				</div>
-			</div>
-			<div className="msg_box hidden">
-				<p ref={msgRef}></p>
-			</div>
 		</>
 	);
 }

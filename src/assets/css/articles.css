@@ -1,14 +1,19 @@
 .admin {
 	min-height: 51vh;
 }
+.admin__articles{
+	margin-top: 186px;
+}
 .home {
 	min-height: 51vh;
+	margin-top: 186px;
 }
 .articles {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	margin-top: 20px;
+	margin-top: 186px;
 }
 .article {
 	position: relative;
@@ -132,6 +137,8 @@
 	animation-duration: 0.8s;
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: forwards;
+	top:50%;
+	left: 40%;
 }
 @keyframes descendDuCiel {
 	0% {
@@ -143,4 +150,14 @@
 }
 .areYouSure p {
 	margin-bottom: 15px;
+}
+
+.create{
+	margin-top:486px;
+}
+@media screen and (max-width: 1240px){
+	body .admin__articles{
+		margin-top: 186px;
+	}
+	
 }

@@ -2,8 +2,10 @@ import { useState, useEffect, useRef } from 'react';
 import getArticles from '../../services/getArticles';
 import { addToPanier } from '../../services/servicePanier';
 import { useFlip } from '../../FlipContext';
+import { likeArticle } from '../../services/serviceArticle';
 
 function NewProducts() {
+	const [toggle, setToggle] = useState();
 	const [articles, setArticles] = useState([]);
 	const [carrouIndex, setCarrouIndex] = useState(0);
 	const carrouselRef = useRef(null);
@@ -22,7 +24,7 @@ function NewProducts() {
 				setArticles(newArticles);
 			})
 			.catch((err) => console.error(err));
-	}, []);
+	}, [toggle]);
 
 	function turnLeft() {
 		console.log('turn left');
@@ -70,17 +72,37 @@ function NewProducts() {
 
 	useEffect(() => {
 		function handleScroll() {
-		  var scrollHeight = document.documentElement.scrollTop || document.body.scrollTop;
-		  console.log("Hauteur du scroll : " + scrollHeight);
-		  msgRef.current.parentElement.style.top=`${scrollHeight+300}px`;
+			var scrollHeight =
+				document.documentElement.scrollTop || document.body.scrollTop;
+			console.log('Hauteur du scroll : ' + scrollHeight);
+			msgRef.current.parentElement.style.top = `${scrollHeight + 300}px`;
 		}
-	
+
 		window.addEventListener('scroll', handleScroll);
-	
+
 		return () => {
-		  window.removeEventListener('scroll', handleScroll);
+			window.removeEventListener('scroll', handleScroll);
 		};
-	  }, []);
+	}, []);
+
+	async function handleLike(e) {
+		const uuid = e.target.dataset.id;
+		const token = JSON.parse(localStorage.getItem('token'));
+		await new Promise((resolve) => setTimeout(resolve, 10));
+		try {
+			const res = await likeArticle(token, uuid);
+			console.log(res);
+			setToggle(!toggle);
+		} catch (err) {
+			console.log(err);
+			msgRef.current.textContent = `${'You must been connected to like articles'}`;
+			msgRef.current.parentElement.classList.add('hidden');
+			await new Promise((resolve) => setTimeout(resolve, 10));
+			msgRef.current.parentElement.classList.remove('hidden');
+		}
+
+		// setToggle(prevToggle => !prevToggle);
+	}
 
 	return (
 		<>
@@ -151,7 +173,15 @@ function NewProducts() {
 											data-id={article.uuid}
 										>
 											ADD TO CART
-										</button>
+										</button>{' '}
+										<div className="article__text-options">
+											<i
+												data-id={article.uuid}
+												onClick={handleLike}
+												className="fa-solid fa-thumbs-up"
+											></i>
+											{article.likes}
+										</div>
 									</div>
 								</div>
 							</div>
