@@ -64,7 +64,6 @@ function Basket(props) {
 	return (
 		<>
 			<div className="basket">
-				{props.etat? (<p>true</p>):(<p>false</p>)}
 				{props.panier.map((article, index) => (
 					<div key={index} className="basket__article">
 						<img
