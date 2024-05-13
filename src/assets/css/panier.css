@@ -57,28 +57,28 @@
 	display: flex;
 	width: 100%;
 }
-.panier__miniature__options a{
+.panier__miniature__options a {
 	width: 100%;
-	margin-right: 0px!important;
+	margin-right: 0px !important;
 }
-.panier__miniature__options button{
+.panier__miniature__options button {
 	width: 100%;
-	border-radius:0%;
+	border-radius: 0%;
 }
 
 /* PAGE PANIER */
 
-.basket{
-	display:flex;
-	flex-direction:column;
-	justify-content:center;
+.basket {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 	padding: 15px;
 	min-height: 50vh;
 }
-.basket__article{
-	display:flex;
-	justify-content:space-around;
+.basket__article {
+	display: flex;
+	justify-content: space-between;
 	width: 100%;
 	width: 40%;
 	margin: auto;
@@ -87,52 +87,62 @@
 	padding: 10px;
 	border-radius: 5px;
 }
-.basket__article img{
+.basket__article img {
 	width: 200px;
 	height: 200px;
 }
-.basket__article__text--titre{
-	font-weight:600;
+.basket__article__text--titre {
+	font-weight: 600;
 	font-size: 20px;
 }
 
-.basket__article__text--category{
+.basket__article__text--category {
 	margin: 10px 0px;
 }
 
-.basket__article__prix{
+.basket__article__prix {
 	margin: 10px 0px;
 }
-.basket__article__total{
+.basket__article__total {
 	margin: 10px 0px;
 }
-.basket__valider{
+.basket__valider {
 	margin: 15px 0px;
 }
 
-@media screen and (max-width: 1350px){
-	body .basket__article{
+@media screen and (max-width: 1350px) {
+	body .basket__article {
 		width: 70%;
 	}
 }
 
-@media screen and (max-width: 766px){
-	body .basket__article{
+@media screen and (max-width: 766px) {
+	body .basket__article {
 		width: 100%;
 	}
-	body .basket__article__text{
-		font-size:14px;
+	body .basket__article img {
+		width: 130px;
+		height: 224px;
 	}
-	body .basket__article__prix{
+	body .basket__article__text {
+		font-size: 12px;
+	}
+	body .basket__article__prix {
 		font-size: 14px;
 	}
 	body .basket__article__text--titre {
-		font-size:14px;
+		font-size: 13px;
 	}
-	body .basket__article{
+	body .basket__article {
 		padding: 0px;
 	}
 	body .basket__article__text {
 		margin-left: 11px;
-	  }
+	}
+	body .basket__article__text label{
+		font-size:12px;
+	}
+	body .basket__article__prix label{
+		font-size:12px;
+	}
 }

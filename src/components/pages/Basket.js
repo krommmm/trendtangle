@@ -16,6 +16,21 @@ function Basket(props) {
 	const { toggleFlip } = useFlip();
 	const msgRef = useRef(null);
 
+	useEffect(() => {
+		function handleScroll() {
+			var scrollHeight =
+				document.documentElement.scrollTop || document.body.scrollTop;
+			console.log('Hauteur du scroll : ' + scrollHeight);
+			confirmRef.current.style.top = `${scrollHeight + 300}px`;
+		}
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
 	async function handleChange(e, index) {
 		const newPanier = [...panier];
 		newPanier[index].quantity = e.target.value;
@@ -34,7 +49,6 @@ function Basket(props) {
 	}
 
 	function handleCmd(e) {}
-
 
 	async function handleDelete(e) {
 		// are you sure ?
@@ -139,7 +153,21 @@ function Basket(props) {
 						</div>
 					</div>
 				))}
-				<div className="areYouSure hidden" ref={confirmRef}>
+		
+				<div className="basket__prixTotal">
+					<label>
+						<span className="bold">Prix total: </span>
+					</label>
+					{props.totalprice}€
+				</div>
+				<button className="btn basket__valider" onClick={handleCmd}>
+					Valider la commande
+				</button>
+			</div>
+			<div className="msg_box hidden">
+				<p ref={msgRef}></p>
+			</div>
+			<div className="areYouSure hidden" ref={confirmRef}>
 					<p>Are you sure ?</p>
 					<button
 						className="btnLittle btn-no"
@@ -154,19 +182,6 @@ function Basket(props) {
 						Yes
 					</button>
 				</div>
-				<div className="basket__prixTotal">
-					<label>
-						<span className="bold">Prix total: </span>
-					</label>
-					{props.totalprice}€
-				</div>
-				<button className="btn basket__valider" onClick={handleCmd}>
-					Valider la commande
-				</button>
-			</div>
-			<div className="msg_box hidden">
-				<p ref={msgRef}></p>
-			</div>
 		</>
 	);
 }
