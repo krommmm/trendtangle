@@ -11,7 +11,6 @@
 	align-items: center;
 	padding: 15px;
 	min-height: 55vh;
-	margin-top: 186px;
 }
 .articleUpdate__img{
     position: relative;
@@ -76,10 +75,4 @@ font-size: 12px;
 
 #myImgModify{
 	display:none;
-}
-@media screen and (max-width: 1240px){
-	body .articleUpdate__container{
-		margin-top: 445px;
-	}
-	
 }

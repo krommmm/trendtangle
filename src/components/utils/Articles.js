@@ -103,7 +103,7 @@ function Articles(props) {
 		function handleScroll() {
 		  var scrollHeight = document.documentElement.scrollTop || document.body.scrollTop;
 		  msgRef.current.parentElement.style.top=`${scrollHeight+300}px`;
-		  confirmRef.current.style.top=`${scrollHeight+600}px`;
+		  confirmRef.current.style.top=`${scrollHeight+300}px`;
 		}
 	
 		window.addEventListener('scroll', handleScroll);

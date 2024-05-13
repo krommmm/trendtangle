@@ -1,7 +1,6 @@
 .auth {
 	min-height: 52vh;
 	background-color: rgba(0, 0, 0, 0.1);
-	margin-top: 186px;
 }
 .login,
 .signup {

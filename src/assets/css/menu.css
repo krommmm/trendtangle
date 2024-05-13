@@ -2,9 +2,6 @@
 .menu {
 	background-color: black;
 	color: white;
-	position:fixed;
-	width: 100%;
-	z-index:9999; 
 }
 .menu a {
 	color: inherit;
