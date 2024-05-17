@@ -37,7 +37,7 @@ const ModifyArticle = (props) => {
 			setSelectCategory(theArticle.category);
 			setName(theArticle.name);
 			setPrice(theArticle.price);
-			setPriceDiscount((theArticle.price*(1-theArticle.discount/100)).toFixed(2));
+			 setPriceDiscount((theArticle.price*(1-theArticle.discount/100)).toFixed(2));
 			setStock(theArticle.stock);
 			setIsNew(theArticle.isNew === 0 ? false : true);
 			setStars(theArticle.stars);
@@ -77,6 +77,11 @@ const ModifyArticle = (props) => {
 	}
 
 	async function handleModifier(e) {
+
+		console.log(`DISCOUNT: ${discount}`);
+		console.log(`PRICE: ${price}`);
+		console.log(`DISCOUNTEDPRICE: ${priceDiscount}`);
+
 		const formData = new FormData();
 		formData.append('name', name);
 		formData.append('price', price);
@@ -118,10 +123,18 @@ const ModifyArticle = (props) => {
 	function handleDiscount(e) {
 		if (e.target.value >= 0 && e.target.value <= 99) {
 			setDiscount(e.target.value);
+			theArticle.discount=e.target.value;
+			handleDiscountedPrice();
 		}
 	}
 	function handlePrice(e) {
 		setPrice(e.target.value);
+		theArticle.price=e.target.value;
+		handleDiscountedPrice();
+	}
+	function handleDiscountedPrice(e){
+		setPriceDiscount((theArticle.price*(1-theArticle.discount/100)).toFixed(2));
+
 	}
 	function handleStock(e) {
 		setStock(e.target.value);
