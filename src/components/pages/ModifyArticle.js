@@ -121,7 +121,7 @@ const ModifyArticle = (props) => {
 		}
 	}
 	function handleDiscount(e) {
-		if (e.target.value >= 0 && e.target.value <= 99) {
+		if (parseFloat(e.target.value) >= 0 && e.target.value <= 99) {
 			setDiscount(parseFloat(e.target.value));
 			theArticle.discount=e.target.value;
 			handleDiscountedPrice();
