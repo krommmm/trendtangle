@@ -15,8 +15,8 @@ const ModifyArticle = (props) => {
 	const [myImg, setMyImg] = useState('');
 	const [discount, setDiscount] = useState('');
 	const [name, setName] = useState('');
-	const [price, setPrice] = useState('');
-	const [priceDiscount, setPriceDiscount] = useState("");
+	const [price, setPrice] = useState(0);
+	const [priceDiscount, setPriceDiscount] = useState(0);
 	const [stock, setStock] = useState('');
 	const [stars, setStars] = useState('');
 	const [specialOffer, setSpecialOffer] = useState('');
@@ -36,8 +36,8 @@ const ModifyArticle = (props) => {
 			setSelectColor(theArticle.color);
 			setSelectCategory(theArticle.category);
 			setName(theArticle.name);
-			setPrice(theArticle.price);
-			 setPriceDiscount((theArticle.price*(1-theArticle.discount/100)).toFixed(2));
+			setPrice(parseFloat(theArticle.price));
+			 setPriceDiscount((parseFloat(theArticle.price)*(1-parseFloat(theArticle.discount)/100)).toFixed(2));
 			setStock(theArticle.stock);
 			setIsNew(theArticle.isNew === 0 ? false : true);
 			setStars(theArticle.stars);
@@ -78,9 +78,11 @@ const ModifyArticle = (props) => {
 
 	async function handleModifier(e) {
 
-		console.log(`DISCOUNT: ${discount}`);
-		console.log(`PRICE: ${price}`);
-		console.log(`DISCOUNTEDPRICE: ${priceDiscount}`);
+		console.log(`DISCOUNT: ${discount} TYPE: ${typeof discount}`);
+		console.log(`PRICE: ${price} TYPE: ${typeof price}`);
+		console.log(`DISCOUNTEDPRICE: ${priceDiscount} TYPE: ${typeof priceDiscount}`);
+		console.log("......");
+	
 
 		const formData = new FormData();
 		formData.append('name', name);
@@ -121,15 +123,17 @@ const ModifyArticle = (props) => {
 		}
 	}
 	function handleDiscount(e) {
-		if (parseFloat(e.target.value) >= 0 && e.target.value <= 99) {
-			setDiscount(parseFloat(e.target.value));
-			theArticle.discount=e.target.value;
+		let reduc = parseFloat(e.target.value);
+		if (reduc >= 0 && reduc <= 99) {
+			setDiscount(reduc);
+			theArticle.discount=reduc;
 			handleDiscountedPrice();
 		}
 	}
 	function handlePrice(e) {
-		setPrice(e.target.value);
-		theArticle.price=e.target.value;
+		let priceNumber = parseFloat(e.target.value);
+		setPrice(priceNumber);
+		theArticle.price=priceNumber;
 		handleDiscountedPrice();
 	}
 	function handleDiscountedPrice(e){
