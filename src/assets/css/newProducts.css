@@ -20,6 +20,7 @@
 .newProducts_caroussel_img {
 	width: 100%;
 	height: 200px;
+	object-fit:contain;
 }
 .newProducts_caroussel_articles {
 	width: 250px;

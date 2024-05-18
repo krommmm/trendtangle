@@ -78,12 +78,6 @@ const ModifyArticle = (props) => {
 
 	async function handleModifier(e) {
 
-		console.log(`DISCOUNT: ${discount} TYPE: ${typeof discount}`);
-		console.log(`PRICE: ${price} TYPE: ${typeof price}`);
-		console.log(`DISCOUNTEDPRICE: ${priceDiscount} TYPE: ${typeof priceDiscount}`);
-		console.log("......");
-	
-
 		const formData = new FormData();
 		formData.append('name', name);
 		formData.append('price', price);
