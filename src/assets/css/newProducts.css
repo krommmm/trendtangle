@@ -1,6 +1,6 @@
-.newProducts{
-    background-color: rgba(0,0,0,.1);
-    padding: 15px;
+.newProducts {
+	background-color: rgba(0, 0, 0, .1);
+	padding: 15px;
 	min-height: 51vh;
 }
 
@@ -10,6 +10,7 @@
 	margin: auto;
 	overflow: hidden;
 }
+
 .newProducts_caroussel {
 	width: 1123px;
 	margin: auto;
@@ -20,13 +21,15 @@
 .newProducts_caroussel_img {
 	width: 100%;
 	height: 200px;
-	object-fit:contain;
+	object-fit: contain;
 }
+
 .newProducts_caroussel_articles {
 	width: 250px;
 	height: 400px;
 	padding: 0px;
-	border: 1px solid black;
+	-webkit-box-shadow: 0px 0px 15px -8px #000000;
+	box-shadow: 0px 0px 15px -8px #000000;
 	margin: 15px;
 	position: relative;
 }
@@ -38,13 +41,16 @@
 	flex-direction: column;
 	margin-top: 10px;
 }
+
 .newProducts_carroussel_text button {
 	margin-top: 15px;
 	cursor: pointer;
 }
+
 .arrowsForCarroussel {
 	display: flex;
 }
+
 .arrowsForCarroussel i {
 	display: flex;
 	justify-content: center;
@@ -58,6 +64,7 @@
 	margin: 5px;
 	cursor: pointer;
 }
+
 .arrowsForCarroussel i:hover {
 	border: 1px solid #d10024;
 	background-color: #d10024;
@@ -68,25 +75,30 @@
 	color: rgba(0, 0, 0, 0.4);
 	padding: 5px;
 }
+
 .newProducts_carroussel_text-name {
 	color: rgba(0, 0, 0, 0.9);
 	font-weight: 600;
 	font-size: 19px;
 }
+
 .newProducts_carroussel_text-price {
 	color: #d10024;
 	font-weight: 600;
 }
+
 .newProducts_carroussel_text-stars {
 	color: #d10024;
 	font-weight: 600;
 }
+
 .newProducts_carroussel_isNew {
 	position: absolute;
 	top: 5%;
 	right: 2%;
 	z-index: 999;
 }
+
 .newProducts_carroussel_isNew p {
 	color: white;
 	background-color: #d10024;
@@ -97,6 +109,7 @@
 	justify-content: center;
 	align-items: center;
 }
+
 .newProducts_carroussel_isDiscount {
 	position: absolute;
 	top: 5%;
@@ -121,14 +134,15 @@
 	justify-content: center;
 	align-items: center;
 }
-@media screen and (max-width: 1400px){
-	body .newProducts_carroussel_container{
+
+@media screen and (max-width: 1400px) {
+	body .newProducts_carroussel_container {
 		width: 562px;
 	}
 }
 
 @media screen and (max-width: 580px) {
-	body .newProducts_carroussel_container{
+	body .newProducts_carroussel_container {
 		width: 281px;
 	}
 }
