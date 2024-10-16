@@ -14,10 +14,7 @@
 ## Description:
 
 
-Application e-commerce qui propose un service d'authentification permettant de distinguer les administrateurs, les membres inscrits et les simples visiteurs.
- Elle intègre des fonctionnalités de likes, des opérations CRUD sur les articles et les catégories, la configuration et la gestion des promotions ainsi que des offres limitées dans le temps. 
- De plus, elle permet la gestion d'un panier d'achat et offre une fonctionnalité de recherche avancée pour trouver des produits. 
- Le serveur, développé en PHP, fonctionne comme une API RESTful, tandis que le frontend utilise React avec des composants, des hooks et des remontées d'état.
+Application e-commerce qui propose un service d'authentification permettant de distinguer les administrateurs, les membres inscrits et les simples visiteurs. Elle intègre des fonctionnalités de likes, des opérations CRUD sur les articles et les catégories, la configuration et la gestion des promotions ainsi que des offres limitées dans le temps. De plus, elle permet la gestion d'un panier d'achat et offre une fonctionnalité de recherche avancée pour trouver des produits. Le serveur, développé en PHP, fonctionne comme une API RESTful, tandis que le frontend utilise React avec des composants, des hooks et des remontées d'état.
 
 
 ## URL :
