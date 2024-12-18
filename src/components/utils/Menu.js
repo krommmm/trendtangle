@@ -145,7 +145,7 @@ function Menu(props) {
 							</li>
 							{isConnected && (
 								<li onClick={handleDisconnect}>
-									<i class="fa-solid fa-user-slash"></i>
+									<i className="fa-solid fa-user-slash"></i>
 									Disconnect
 								</li>
 							)}
@@ -193,7 +193,7 @@ function Menu(props) {
 											ref={panierRef}
 										>
 											<i
-												class="fa-solid fa-circle-xmark"
+												className="fa-solid fa-circle-xmark"
 												onClick={() => setOpen(false)}
 											></i>
 											<div className="panier__miniature__articles">
@@ -212,7 +212,7 @@ function Menu(props) {
 																	data-id={
 																		article.uuid
 																	}
-																	class="fa-solid fa-circle-xmark"
+																	className="fa-solid fa-circle-xmark"
 																	onClick={
 																		handleDeletePanier
 																	}

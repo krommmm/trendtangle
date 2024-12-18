@@ -77,8 +77,8 @@ function Login(props) {
 					/>
 					<div className="login__form__changeVisibility">
 						{' '}
-						<i class="fa-solid fa-eye-slash hidden" onClick={handleShowVisibility}></i>
-						<i class="fa-solid fa-eye" onClick={handleHideVisibility}></i>
+						<i className="fa-solid fa-eye-slash hidden" onClick={handleShowVisibility}></i>
+						<i className="fa-solid fa-eye" onClick={handleHideVisibility}></i>
 					</div>
 
 					<button
