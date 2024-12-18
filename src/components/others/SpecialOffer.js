@@ -92,7 +92,7 @@ function SpecialOffer() {
 		function handleScroll() {
 			var scrollHeight =
 				document.documentElement.scrollTop || document.body.scrollTop;
-			console.log('Hauteur du scroll : ' + scrollHeight);
+			// console.log('Hauteur du scroll : ' + scrollHeight);
 			msgRef.current.parentElement.style.top = `${scrollHeight + 300}px`;
 		}
 
