@@ -48,6 +48,7 @@ function Menu(props) {
 
 	useEffect(() => {
 		const token = JSON.parse(localStorage.getItem('token'));
+		if(!token){return};
 		getPanier(token)
 			.then((res) => {
 				setPanier(res.articles);
