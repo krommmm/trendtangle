@@ -89,11 +89,11 @@ function Signup(props) {
 		if (isName && isEmail && isPassword) {
 			setIsReady(true);
 			let res = await userSign(name, email, password);
-			console.log(res);
+	
 			setAnsPost(res.msg);
 			if (res.msg === 'User created') {
 				let res2 = await userLog(email, password);
-				console.log(res2);
+		
 				msgRef.current.textContent=`${res.msg}`;
 				msgRef.current.parentElement.classList.toggle("hidden");
 				localStorage.setItem('token', JSON.stringify(res2.token));

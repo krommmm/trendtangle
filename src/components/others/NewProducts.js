@@ -27,13 +27,13 @@ function NewProducts() {
 	}, [toggle]);
 
 	function turnLeft() {
-		console.log('turn left');
+	
 		if (carrouIndex > 0) {
 			setCarrouIndex(carrouIndex - 1);
 		}
 	}
 	function turnRight() {
-		console.log('turn right');
+
 		if (carrouIndex < articles.length - 1) {
 			setCarrouIndex(carrouIndex + 1);
 		} else {
@@ -49,9 +49,9 @@ function NewProducts() {
 	async function addToCart(e) {
 		const token = JSON.parse(localStorage.getItem('token'));
 		if (!token) {
-			console.log({
-				msg: "Aucun token disponible. L'utilisateur doit être connecté.",
-			});
+			// console.log({
+			// 	msg: "Aucun token disponible. L'utilisateur doit être connecté.",
+			// });
 			msgRef.current.textContent = `Aucun token disponible. L'utilisateur doit être connecté.`;
 			msgRef.current.parentElement.classList.add('hidden');
 			await new Promise((resolve) => setTimeout(resolve, 10));
@@ -62,7 +62,7 @@ function NewProducts() {
 		await new Promise((resolve) => setTimeout(resolve, 10));
 		let uuid = e.target.dataset.id;
 		const res = await addToPanier(token, uuid);
-		console.log(res);
+
 		msgRef.current.textContent = `${res.msg}`;
 		msgRef.current.parentElement.classList.add('hidden');
 		await new Promise((resolve) => setTimeout(resolve, 10));
@@ -74,7 +74,7 @@ function NewProducts() {
 		function handleScroll() {
 			var scrollHeight =
 				document.documentElement.scrollTop || document.body.scrollTop;
-			console.log('Hauteur du scroll : ' + scrollHeight);
+			// console.log('Hauteur du scroll : ' + scrollHeight);
 			msgRef.current.parentElement.style.top = `${scrollHeight + 300}px`;
 		}
 
@@ -91,7 +91,7 @@ function NewProducts() {
 		await new Promise((resolve) => setTimeout(resolve, 10));
 		try {
 			const res = await likeArticle(token, uuid);
-			console.log(res);
+			// console.log(res);
 			setToggle(!toggle);
 		} catch (err) {
 			console.log(err);

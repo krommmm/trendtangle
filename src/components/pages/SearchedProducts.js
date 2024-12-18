@@ -20,7 +20,7 @@ function SearchedProducts() {
 				setArticles(res.articles);
                 let sortedArticles = res.articles.filter((article)=>article.name.toLowerCase().includes(searchedValue.toLowerCase()));
                 setArticlesSearched(sortedArticles);
-				console.log(sortedArticles);
+				// console.log(sortedArticles);
 			})
 			.catch((err) => console.error(err));
 	}, [searchedValue]);

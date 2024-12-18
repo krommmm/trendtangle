@@ -96,7 +96,7 @@ const ModifyArticle = (props) => {
 		await new Promise((resolve) => setTimeout(resolve, 10));
 
 		const res = await updateArticle(token, uuid, formData);
-		console.log(res);
+		// console.log(res);
 		msgRef.current.textContent=res.msg;
 		msgRef.current.parentElement.classList.toggle("hidden");
 	}

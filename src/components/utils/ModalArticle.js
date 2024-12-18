@@ -58,11 +58,11 @@ function ModalArticle(props) {
 		formData.append('stars', starsRef.current.value);
 		formData.append('image', inputRef.current.files[0]);
 
-		console.log(selectColor);
+		// console.log(selectColor);
 		await new Promise((resolve) => setTimeout(resolve, 10));
 		const token = JSON.parse(localStorage.getItem('token'));
 		const res = await postArticle(token, formData);
-		console.log(res);
+		// console.log(res);
 		if(res.error){
 			props.remonterAnswerModal(res.error);
 		}else if(res.msg){

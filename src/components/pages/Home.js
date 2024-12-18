@@ -11,7 +11,7 @@ function Home() {
 	useEffect(() => {
 		getArticles()
 			.then((res) => {
-				console.log(res.articles);
+				// console.log(res.articles);
 				res.articles.forEach((article) => {
 					let currentDate = new Date().getTime();
 

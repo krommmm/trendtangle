@@ -20,7 +20,7 @@ function Basket(props) {
 		function handleScroll() {
 			var scrollHeight =
 				document.documentElement.scrollTop || document.body.scrollTop;
-			console.log('Hauteur du scroll : ' + scrollHeight);
+			// console.log('Hauteur du scroll : ' + scrollHeight);
 			confirmRef.current.style.top = `${scrollHeight + 300}px`;
 		}
 
@@ -40,7 +40,7 @@ function Basket(props) {
 		let quantity = e.target.value;
 		let articleId = e.target.dataset.id;
 		let res = await modifyBasket(token, articleId, quantity);
-		console.log(res);
+		// console.log(res);
 		toggleFlip();
 		msgRef.current.textContent = res.msg;
 		msgRef.current.parentElement.classList.add('hidden');
@@ -64,7 +64,7 @@ function Basket(props) {
 		const token = JSON.parse(localStorage.getItem('token'));
 		await new Promise((resolve) => setTimeout(resolve, 10));
 		const res = await deleteArticleFromPanier(token, uuid);
-		console.log(res);
+		// console.log(res);
 		msgRef.current.textContent = `${res.msg}`;
 		msgRef.current.parentElement.classList.add('hidden');
 		await new Promise((resolve) => setTimeout(resolve, 10));

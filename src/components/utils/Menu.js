@@ -100,7 +100,7 @@ function Menu(props) {
 		const token = await JSON.parse(localStorage.getItem('token'));
 		const uuid = e.target.dataset.id;
 		const res = await deleteArticleFromPanier(token, uuid);
-		console.log(res);
+		// console.log(res);
 		setTriggers(!triggers);
 		toggleFlip();
 	}

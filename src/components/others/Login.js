@@ -29,7 +29,7 @@ function Login(props) {
 		if (email !== '' && email !== '') {
 			setIsReady(true);
 			const res = await userLog(email, password);
-			console.log(res);
+
 		
 			msgRef.current.textContent=`${res.msg}`;
 				msgRef.current.parentElement.classList.add('hidden');

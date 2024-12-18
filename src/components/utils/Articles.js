@@ -52,7 +52,7 @@ function Articles(props) {
 		const token = JSON.parse(localStorage.getItem('token'));
 		await new Promise((resolve) => setTimeout(resolve, 10));
 		const res = await likeArticle(token, uuid);
-		console.log(res);
+
 		setToggle(!toggle);
 		// setToggle(prevToggle => !prevToggle);
 	}
@@ -65,7 +65,7 @@ function Articles(props) {
 		const token = JSON.parse(localStorage.getItem('token'));
 		await new Promise((resolve) => setTimeout(resolve, 10));
 		const res = await deleteArticle(token, uuid);
-		console.log(res);
+
 		msgRef.current.textContent = `${res.msg}`;
 		msgRef.current.parentElement.classList.add('hidden');
 		await new Promise((resolve) => setTimeout(resolve, 10));
@@ -78,9 +78,9 @@ function Articles(props) {
 	async function addToCart(e) {
 		const token = JSON.parse(localStorage.getItem('token'));
 		if (!token) {
-			console.log({
-				msg: "Aucun token disponible. L'utilisateur doit être connecté.",
-			});
+			// console.log({
+			// 	msg: "Aucun token disponible. L'utilisateur doit être connecté.",
+			// });
 			msgRef.current.textContent = `Aucun token disponible. L'utilisateur doit être connecté.`;
 			msgRef.current.parentElement.classList.add('hidden');
 			await new Promise((resolve) => setTimeout(resolve, 10));
@@ -91,7 +91,7 @@ function Articles(props) {
 		await new Promise((resolve) => setTimeout(resolve, 10));
 		let uuid = e.target.dataset.id;
 		const res = await addToPanier(token, uuid);
-		console.log(res);
+	
 		msgRef.current.textContent = `${res.msg}`;
 		msgRef.current.parentElement.classList.add('hidden');
 		await new Promise((resolve) => setTimeout(resolve, 10));
