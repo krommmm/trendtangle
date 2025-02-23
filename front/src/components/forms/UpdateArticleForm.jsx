@@ -1,5 +1,5 @@
 import { SelectOption } from "../common/SelectOption";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { modifyArticle } from "../../services/service_articles";
 
 export function UpdateArticleForm({ article, closeModal, onUpdate }) {
@@ -32,13 +32,39 @@ export function UpdateArticleForm({ article, closeModal, onUpdate }) {
         }
     });
 
-
-
-    const selectOptionInfos = [
+    const [selectOptionInfos, setSelectOptionInfos] = useState([
         { labelName: "category", optionNames: ["pull", "t-shirt", "pants", "shoes"] },
         { labelName: "gender", optionNames: ["male", "female", "unisex", "child"] },
         { labelName: "color", optionNames: ["blue", "orange", "green", "white", "black"] }
-    ];
+    ]);
+    const [isNewOrigin, setIsnewOrigin] = useState(article.isNew);
+
+    useEffect(() => {
+        reorganizeSelectOptionInfos();
+        reinitializeCategoriesStates();
+    }, []);
+
+    function reorganizeSelectOptionInfos() {
+        const articleSelection = [article.category, article.gender, article.color];
+        const newSelect = selectOptionInfos.map((item, i) => {
+            const indexSearched = item.optionNames.findIndex((cell) => cell === articleSelection[i]);
+            const res = swapElements(indexSearched, 0, item.optionNames);
+            return ({ ...item, optionNames: res });
+        });
+        setSelectOptionInfos(newSelect);
+    }
+
+    function swapElements(oldIndex, newIndex, arr) {
+        const myArr = [...arr];
+        myArr[newIndex] = myArr.splice(oldIndex, 1, myArr[newIndex])[0];
+        return myArr;
+    }
+
+    function reinitializeCategoriesStates() {
+        setSelectedCategory(article.category);
+        setSelectedGender(article.gender);
+        setSelectedColor(article.color);
+    }
 
     function toggleIsNew() {
         setIsNew(!isNew);
@@ -52,22 +78,30 @@ export function UpdateArticleForm({ article, closeModal, onUpdate }) {
 
         let myFormData = new FormData();
         if (form.imgUrl.files[0] !== undefined) myFormData.append("imgUrl", form.imgUrl.files[0]);
-
+        if (selectedCategory !== article.category) myFormData.append("category", selectedCategory);
+        if (selectedGender !== article.gender) myFormData.append("gender", selectedGender);
+        if (selectedColor !== article.color) myFormData.append("color", selectedColor);
         myFormData.append("isNew", isNew);
-        console.log(isNew);
 
         const formDataWithoutImgKey = formData;
         delete formDataWithoutImgKey.imgUrl;
+        
 
-        let isObjEmpty = true;
+        let isObjEmpty = Object.values(formDataWithoutImgKey).every(value => !value) && 
+        selectedCategory === article.category && 
+        selectedGender === article.gender && 
+        selectedColor === article.color && 
+        isNew === isNewOrigin;
+
         for (let i = 0; i < Object.keys(formDataWithoutImgKey).length; i++) {
             const key = Object.keys(formDataWithoutImgKey)[i];
             const value = Object.values(formDataWithoutImgKey)[i];
-            if (value && value !== undefined && value !== null && value !== "") {
+            if ((value && value !== undefined && value !== null && value !== "")) {
                 myFormData.append(`${key}`, value);
-                isObjEmpty = false;
             }
         }
+    
+
         if (isObjEmpty) {
             setFetchAnswer(false);
             setAnswerData({ ...answerData, success: { ...answerData.success, active: "false" } });

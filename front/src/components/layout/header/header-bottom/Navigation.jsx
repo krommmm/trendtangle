@@ -7,7 +7,7 @@ export function Navigation({ isUserAdmin }) {
     const [toggleGender, setToggleGender] = useState(false); 
     const [toggleColor, setToggleColor] = useState(false);
     const [activeLink, setActiveLink] = useState(""); // Gérer l'état actif
-    const category = { name: "category", values: ["pull", "t-shirt", "pantalon", "shoes"] };
+    const category = { name: "category", values: ["pull", "t-shirt", "pants", "shoes"] };
     const gender = { name: "gender", values: ["female", "male","unisex", "child"] };
     const color = { name: "color", values: ["blue","orange","green", "white", "back"] };
 
