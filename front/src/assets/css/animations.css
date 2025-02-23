@@ -1,0 +1,21 @@
+@keyframes  appearsSlowlyFromRight{
+    0%{
+        opacity:0%;
+        transform: translateX(200px);
+    }
+    100%{
+        opacity:100%;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes  appearsSlowlyFromLeft{
+    0%{
+        opacity:0%;
+        transform: translateX(-100px);
+    }
+    100%{
+        opacity:100%;
+        transform: translateX(0px);
+    }
+}

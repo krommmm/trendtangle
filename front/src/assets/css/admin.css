@@ -1,0 +1,410 @@
+nav {
+
+    width: fit-content;
+    color: white;
+}
+
+nav ul li {
+    padding: 15px;
+    cursor: pointer;
+    margin: 15px;
+    border-radius: 5px;
+}
+
+nav ul li:hover {
+    background-color: white;
+    color: black;
+}
+
+nav ul li i {
+    margin-right: 15px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.adminNavBar {
+    /* position: absolute;
+    top: 0px; */
+    margin: 15px;
+}
+
+.adminNavBar li {
+    list-style-type: none;
+}
+
+.adminNavBar__bar {
+    background-color: #1E1F29;
+    border-radius: 7px;
+    padding: 8px;
+}
+
+.admin {
+    display: flex;
+    position: relative;
+}
+
+.adminNavBar__bar__header {
+    background-color: #d10024;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.adminNavBar__bar .activeLink>li {
+    background-color: white;
+    color: black;
+}
+
+/* ..............ADMIN ADD.............. */
+.adminAdd {
+    display: flex;
+}
+
+.adminAdd form label {
+    font-weight: 600;
+}
+
+#formAdd {
+    display: flex;
+    padding: 25px;
+}
+
+#formAdd .inputs {
+    margin-right: 30px;
+}
+
+#formAdd .rest div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#formAdd input {
+    height: 40px;
+    margin: 15px 0px;
+    outline: none;
+    padding-left: 15px;
+    width: 100%;
+}
+
+#formAdd select {
+    height: 40px;
+    margin: 15px 0px;
+    text-align: center;
+    width: fit-content;
+}
+
+#formAdd .isNew {
+    height: 40px;
+    margin: 15px 0px;
+    border: 1px solid black;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#formAdd button {
+    background-color: #d10024;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    height: 50px;
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    width: fit-content;
+    margin: 15px 0px;
+}
+
+body #formAdd .rest .formAddAnswer--false {
+    display: none;
+}
+
+body #formAdd .rest .formAddAnswer--true {
+    display: flex;
+}
+
+.formAddAnswer--red {
+    background-color: #e87c03;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    height: 50px;
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: appearsSlowlyFromRight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.formAddAnswer--green {
+    background-color: green;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: appearsSlowlyFromRight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+
+/* ..............ADMIN ARTICLES.............. */
+.adminArticles {
+    display: flex;
+}
+
+.adminArticles .adminNavBar__bar li {
+    display: flex;
+}
+
+/* ..............ADMIN ARTICLES  => selection.............. */
+.adminArticles__content__selection {
+    display: flex;
+}
+
+.adminArticles__content__selection--category,
+.adminArticles__content__selection--gender,
+.adminArticles__content__selection--color {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.adminArticles__content__selection label {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.adminArticles__content__selection select {
+    height: 40px;
+    margin: 15px 0px;
+    padding: 10px;
+    text-align: center;
+    width: fit-content;
+}
+
+.adminArticles__content__articles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.adminArticles__content__articles .ficheProduit {
+    margin: 15px;
+}
+
+/* ..............ADMIN ARTICLES  => pagination.............. */
+.adminArticles__content__pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pageContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.adminArticles__content__articles {
+    width: 75%;
+    margin: auto;
+}
+
+.adminArticles__content__pagination {
+    width: 75%;
+    margin: 40px auto;
+}
+
+.adminArticles__content {
+    width: 100%;
+}
+
+/* ..............ADMIN FLASH.............. */
+
+.adminFlash {
+    display: flex;
+}
+
+.adminFlash__content {
+    width: 100%;
+}
+
+.adminFlash__content__articles {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+}
+
+.adminFlash__content__pagination {
+    width: 75%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.ficheProduit__text__footer__flash {
+    width: 25px;
+    height: 25px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.adminFlash__content__articles .ficheProduit {
+    margin: 15px;
+}
+
+.adminFlash .adminNavBar__bar li {
+    display: flex;
+}
+
+.flash-true {
+    color: green;
+}
+
+.flash-false {
+    color: #e87c03;
+}
+
+.adminFlash__content__selection {
+    display: flex;
+}
+
+.adminFlash__content__selection label {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.adminFlash__content__selection select {
+    height: 40px;
+    margin: 15px 0px;
+    padding: 10px;
+    text-align: center;
+    width: fit-content;
+}
+
+.adminFlash__content__selection--time {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.adminFlash__content__selection--category,
+.adminFlash__content__selection--gender,
+.adminFlash__content__selection--color {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    width: fit-content;
+}
+
+.adminFlash__content__selection--time select {
+    padding: 5px;
+}
+
+.adminFlash__content__reset {
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    height: 50px;
+    width: fit-content;
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 15px 0px;
+}
+
+.adminFlash__content__create {
+    background-color: #d10024;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    height: 50px;
+    width: fit-content;
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 15px 0px;
+    margin: 10px;
+}
+
+
+
+.adminFlash__content form label {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.adminFlash__content form input {
+    height: 27px;
+    margin: 3px 0px;
+    outline: none;
+    padding-left: 15px;
+    width: fit-content;
+}
+
+.adminFlash__content form .inputFlashSale {
+    height: 21px;
+}
+
+.adminFlash__containerInput {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+
+.adminFlash__content__header h3 {
+    margin: 15px 0px;
+}
+
+.adminFlash__content__footer {
+    display: flex;
+}
+
+.adminFlash__content__footer .submitContainer__answer--red,
+.adminFlash__content__footer .submitContainer__answer--green {
+    margin: 0px;
+}
+
+.adminFlash__content__footer >p{
+    margin: 0px;
+}
+
+.greyed {
+    filter: brightness(.8);
+}
+
+
+#formAdd .inputs>div {
+    display: flex;
+    flex-direction: column;
+}
+
+#formAdd input {
+    max-width: 200px;
+}
+
+.adminFlash {
+    display: flex;
+}

@@ -1,0 +1,239 @@
+/* .......header top........ */
+.header {
+	background-color: black;
+	color: white;
+}
+
+.header a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.header li {
+	list-style-type: none;
+	cursor: pointer;
+}
+
+.header__headerTop li:hover {
+	color: red;
+}
+
+.header__headerTop__contact i {
+	margin-right: 10px;
+	color: red;
+	font-size: 12px;
+}
+
+.header__headerTop__account i {
+	margin-right: 10px;
+	color: red;
+	font-size: 12px;
+}
+
+.header__headerTop__right .miniMenuContainer i {
+
+	color: white;
+	font-size: 26px;
+	margin: 8px 0px;
+	cursor:pointer;
+}
+.header__headerTop__right .miniMenuContainer i:hover{
+	color:red;
+}
+
+.header__headerTop {
+	align-items: center;
+	display: flex;
+	font-size: 12px;
+	font-weight: 600;
+	justify-content: space-around;
+	margin: auto;
+	padding: 10px;
+	width: 60%;
+	background-color: #1E1F29;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.header__headerTop__contact {
+	display: flex;
+	width: 100%;
+}
+
+.header__headerTop__contact ul {
+	display: flex;
+}
+
+.header__headerTop__contact ul li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 20px;
+}
+
+.header__headerTop__account {
+	display: flex;
+}
+
+.header__headerTop__account li {
+	display: flex;
+	width: 100px;
+}
+
+.header__headerTop__account ul {
+	display: flex;
+}
+
+/* .......header middle........ */
+
+.header__headerMiddle {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+	padding: 25px;
+	width: 70%;
+}
+
+.header__headerMiddle--title {
+	margin-right: 20px;
+	font-size: 41px;
+	font-weight: 600;
+	margin-right: 10px;
+}
+
+/* .......header middle SearchBar........ */
+
+#form_searchBar input {
+	border: none;
+	border-bottom-left-radius: 15px;
+	border-top-left-radius: 15px;
+	height: 40px;
+	outline: none;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 400px;
+}
+
+#form_searchBar button {
+	background-color: #d10024;
+	border: none;
+	border-bottom-right-radius: 15px;
+	border-top-right-radius: 15px;
+	color: #fff;
+	cursor: pointer;
+	font-weight: 600;
+	height: 40px;
+	width: 100px;
+}
+
+/* .......header middle card........ */
+.header__headerMiddle__card__container__HeaderCardToggle {
+	position: relative;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+.header__headerMiddle__card__container__HeaderCardToggle__icons {
+	align-items: center;
+	background-color: #d10024;
+	border-radius: 50%;
+	color: #fff;
+	display: flex;
+	font-size: 10px;
+	font-weight: 600;
+	height: 20px;
+	justify-content: center;
+	padding: 10px;
+	position: absolute;
+	right: 4px;
+	top: -15px;
+	width: 20px;
+}
+
+.header__headerMiddle__card__container__HeaderCardToggle .headerPanierIcon {
+	margin-bottom: 5px;
+}
+
+/* .......header Navigation........ */
+.navigation {
+	background-color: #fff;
+	border-bottom: 2px solid #e4e7ed;
+	border-top: 3px solid #d10024;
+	color: #000;
+	padding: 15px;
+}
+
+.navigation__container {
+	margin: auto;
+	width: 60%;
+}
+
+.navigation__container ul {
+	display: flex;
+	align-items: center;
+}
+
+.navigation__container ul .classique {
+	font-weight: 600;
+}
+
+.navigation__container ul li {
+	margin-right: 25px;
+}
+
+.navigation__container ul li a {
+	text-decoration: none;
+	padding: 10px 0px;
+	font-weight: 600;
+}
+
+.navigation__container .activeLink {
+	color: #d10024 !important;
+	font-weight: 600;
+}
+
+/* .......menu deroulant........ */
+
+.navigation__container ul>li {
+	position: relative;
+}
+
+.menuDeroulant {
+	position: absolute;
+	z-index: 300;
+	/* border: 1px solid black; */
+	top: 100%;
+}
+
+.menuDeroulant ul {
+	display: flex;
+	flex-direction: column;
+}
+
+.menuDeroulant ul a {
+	padding: 15px 30px;
+	font-size: 13px;
+	width: 100px;
+	font-weight: bold;
+	border: 5px double white;
+	background-color: #d10024;
+	color: #eee;
+	padding: 15px 0px;
+	border-radius: 7px;
+	margin: 5px 0px;
+}
+
+.menuDeroulant ul a:hover {
+	background-color: white;
+	border: 5px double black;
+	color: black;
+}
+
+.menuDeroulant ul a li {
+	font-weight: 600;
+	padding: 5px 0px 5px 15px;
+}

@@ -1,0 +1,48 @@
+.footer {
+	background: #15161d;
+	color: #b9babc;
+	padding: 30px;
+	border-top:3px solid #d10024;
+}
+.footer_container{
+    width: 60%;
+    margin: auto;
+	display: flex;
+	justify-content: space-between;
+}
+.footer li {
+	list-style-type: none;
+    cursor:pointer;
+    margin: 7px 0px;
+}
+.footer i {
+	color: #d10024;
+    margin: 7px 0px;
+}
+.footer__category-title {
+	font-size: 18px;
+	font-weight: 600;
+	color: white;
+    margin: 15px 0px;
+}
+.footer__category-infoUs:hover {
+	color: #d10024;
+}
+.footer__category-lorem{
+    max-width: 250px;
+}
+@media screen and (max-width: 1200px){
+	body .footer_container{
+		width: 100%;
+	}
+	body .footer__category{
+		margin: 10px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	body .footer_container {
+	  width: 100%;
+	  flex-direction: column;
+	}
+  }

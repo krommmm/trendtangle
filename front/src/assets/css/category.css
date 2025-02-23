@@ -1,0 +1,57 @@
+/* category */
+.category {
+    display: flex;
+    flex-direction: column;
+}
+
+.categoryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: auto;
+    padding: 35px 0px;
+    justify-content: center;
+}
+
+.category .ficheProduit {
+    margin: 15px;
+}
+
+/* gender */
+.gender {
+    display: flex;
+    flex-direction: column;
+}
+
+.genderContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: auto;
+    padding: 35px 0px;
+    justify-content: center;
+}
+
+.gender .ficheProduit {
+    margin: 15px;
+}
+
+/* color */
+
+.color {
+    display: flex;
+    flex-direction: column;
+}
+
+.colorContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: auto;
+    padding: 35px 0px;
+    justify-content: center;
+}
+
+.color .ficheProduit {
+    margin: 15px;
+}

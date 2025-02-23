@@ -1,0 +1,81 @@
+.flashSale {
+    background-color: #E4E7ED;
+    padding: 30px;
+}
+
+.flashSale__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flashSale__content__main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flashSale__content__main__text {
+    margin: 30px;
+}
+
+.flashSale__content__main__text--name {
+    font-size: 22px;
+    font-weight: 600;
+    color: green;
+}
+
+.flashSale__content img {
+    height: 220px;
+}
+
+.flashSale__content__imgLeft {
+    transform: rotate(-20deg);
+}
+
+.flashSale__content__imgRight {
+    transform: rotate(20deg);
+}
+
+.flashSale__content button {
+    background-color: #d10024;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    height: 50px;
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.flashSale__content__main__text--sale {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.flashSale__content__main__timer {
+    display: flex;
+    align-items: center;
+}
+
+.flashSale__content__main__timer__circle {
+    background-color: #d10024;
+    color: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 13px;
+    margin: 5px;
+}
+
+.flashSale__content__main__timer__circle__time {
+    font-size: 30px;
+    font-weight: 600;
+}

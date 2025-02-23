@@ -1,0 +1,17 @@
+.newProducts {
+    display: flex;
+    flex-direction: column;
+}
+
+.newProductsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: auto;
+    padding: 35px 0px;
+    justify-content: center;
+}
+
+.newProducts .ficheProduit {
+    margin: 15px;
+}

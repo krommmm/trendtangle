@@ -1,0 +1,17 @@
+.searchProducts {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchProducts__content {
+    display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: auto;
+    padding: 35px 0px;
+}
+
+.searchProducts__content .ficheProduit {
+    margin: 15px;
+}

@@ -1,0 +1,57 @@
+/* *********show case*********  */
+
+.showCase {
+    display: flex;
+    justify-content: center;
+}
+
+.showCase img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.showCase_img {
+    width: 100%;
+}
+
+.showCase article {
+    height: 258px;
+    margin: 15px;
+    overflow: hidden;
+    position: relative;
+    width: 350px;
+}
+
+.showCase article::before {
+    background: #d10024;
+    bottom: 0;
+    content: "";
+    left: 120px;
+    opacity: .9;
+    position: absolute;
+    top: -200px;
+    transform: translateX(-250px) rotate(25deg);
+    width: 100%;
+}
+
+.showCase article .showCase_text {
+    color: #fff;
+    left: 5%;
+    position: absolute;
+    top: 10%; 
+}
+
+.showCase article .showCase_text .showCase_text_title {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.ficheproduit__text__title {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+

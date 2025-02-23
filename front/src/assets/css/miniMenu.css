@@ -1,0 +1,46 @@
+.miniMenuContainer {
+    color: white;
+    display: none;
+}
+
+.miniMenu__header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.miniMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    animation-name: appearsSlowlyFromRight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    display: flex;
+    flex-direction: column;
+}
+
+.miniMenu .fa-circle-xmark {
+    font-size: 20px;
+    padding: 25px;
+    cursor: pointer;
+}
+
+.miniMenu .fa-circle-xmark:hover {
+    color: red;
+}
+
+.miniMenu a {
+    font-size: 17px;
+}
+
+.miniMenu__body {
+    padding: 24px;
+}
+
+.miniMenu__body li{
+    margin: 15px 0px;
+}
