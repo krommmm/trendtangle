@@ -77,9 +77,7 @@
         margin: auto;
     }
 
-    body .newProducts--vision {
-        width: 261px !important;
-    }
+
 
     body .showCase article {
         width: fit-content;
@@ -189,4 +187,29 @@
 
 
 
+}
+
+@media screen and (max-width: 930px) {
+
+    body .flashSale__content__imgLeft,
+    .flashSale__content__imgRight {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 452px) {
+    body .flashSale__content__main__timer__circle {
+        width: 70px;
+        height: 70px;
+    }
+
+    body .flashSale__content__main__timer__circle__time {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 1078px) {
+    body .newProducts--vision {
+        width: 261px !important;
+    }
 }
